@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using RealState.Model;
 
 namespace RealState.Data
 {
@@ -9,5 +10,6 @@ namespace RealState.Data
             : base(options)
         {
         }
+        public DbSet<UserModel> ApplicationUser { get; set; }
     }
 }
