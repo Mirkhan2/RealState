@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using RealState.Utilities;
 
 namespace RealState.Pages
 {
+    [Authorize(Roles =Roles.Admin)]
     public class PrivacyModel : PageModel
     {
         private readonly ILogger<PrivacyModel> _logger;
