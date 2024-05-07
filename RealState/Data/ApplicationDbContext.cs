@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using RealState.Model;
+using RealEstate.Model;
 
-namespace RealState.Data
+namespace RealEstate.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
@@ -12,5 +12,8 @@ namespace RealState.Data
         }
         public DbSet<UserModel> ApplicationUser { get; set; }
         public DbSet<EstateModel> Estate { get; set; }
+        public DbSet<CategoryModel> Category { get; set; }
+        //Cascade manager cat dell all produckt
+
     }
 }

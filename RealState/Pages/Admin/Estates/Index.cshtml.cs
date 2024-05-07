@@ -1,8 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using RealState.Data;
-using RealState.Model;
+
+using RealEstate.Model;
+using RealEstate.Data;
 
 namespace RealState.Pages.Admin.Estates
 {

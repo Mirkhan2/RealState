@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using RealState.Data;
-using RealState.Model;
+using RealEstate.Data;
+using RealEstate.Model;
 
 namespace RealState
 {
