@@ -13,6 +13,7 @@ namespace RealEstate.Data
         public DbSet<UserModel> ApplicationUser { get; set; }
         public DbSet<EstateModel> Estate { get; set; }
         public DbSet<CategoryModel> Category { get; set; }
+        public DbSet<FavouriteModel> Favourite { get; set; }
         //Cascade manager cat dell all produckt
 
     }

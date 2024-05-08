@@ -23,5 +23,6 @@ namespace RealEstate.Model.ViewModel
         public string FullName { get; set; }
 
         public string ReturnUrl { get; set; }
-    }
+		public string PhoneNumber { get; internal set; }
+	}
 }

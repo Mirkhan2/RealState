@@ -1,7 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.Build.Framework;
-
 namespace RealEstate.Model
 { 
 public class CategoryModel

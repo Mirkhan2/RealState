@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using RealEstate.Data;
 using RealEstate.Model;
+using RealState.Utilities;
+using static RealState.Utilities.Roles;
 
 namespace RealState
 {
@@ -21,10 +23,25 @@ namespace RealState
 
             builder.Services.AddDefaultIdentity<UserModel>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            builder.Services.AddRazorPages();
-          //  builder.Services.AddControllersWithViews(); 
 
-            var app = builder.Build();
+			#region Authorization
+
+			builder.Services.AddAuthorization(options =>
+			{
+                options.AddPolicy(AuthorizationPolicies.AdminPolicy, p => p.RequireRole(Roles.Admin));
+
+			});
+			builder.Services.AddRazorPages(options =>
+			{
+				options.Conventions.AuthorizeFolder("/Panel/Admin", AuthorizationPolicies.AdminPolicy);
+			});
+
+			#endregion
+
+
+			//  builder.Services.AddControllersWithViews(); 
+
+			var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
